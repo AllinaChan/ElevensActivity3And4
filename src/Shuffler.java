@@ -14,7 +14,7 @@ public class Shuffler {
      * Tests shuffling methods.
      * @param args is not used.
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                 " consecutive perfect shuffles:");
         int[] values1 = {0, 1, 2, 3};
@@ -40,7 +40,22 @@ public class Shuffler {
             System.out.println();
         }
         System.out.println();
+    }*/
+    public static void print(int[] arr){
+        for(int i = 0; i < arr.length; i++){
+            System.out.println(arr[i]);
+        }
     }
+
+    public static void main(String[] args){
+        int [] values = {1,2,34,3,45,6,7,8,3,9};
+        System.out.println("Before:");
+        print(values);
+        perfectShuffle(values);
+        System.out.println("After:");
+        print(values);
+    }
+
 
 
     /**
@@ -49,8 +64,26 @@ public class Shuffler {
      * the cards in one half with the cards in the other.
      * @param values is an array of integers simulating cards to be shuffled.
      */
+    int [] values = {1,2,34,3,45,6,7,8,3,9};
     public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+
+        int half = (int)(values.length/2);
+        System.out.println("half"+half);
+        int [] everyother = new int [half];
+        int[] rest = new int[half];
+
+        for(int i = 0; i < half; i++){
+            everyother[i] = values[i];
+        }
+        System.out.println("new array made");
+        print(everyother);
+        for(int w = (half+1); w < values.length; w++){
+            everyother[w] = values[w];
+        }
+
+
+
     }
 
     /**
