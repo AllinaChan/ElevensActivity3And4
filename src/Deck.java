@@ -63,6 +63,9 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        Shuffler.selectionShuffle();
+        size = cards.size();
+
     }
 
     /**
