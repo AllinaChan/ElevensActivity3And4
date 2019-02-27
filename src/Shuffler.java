@@ -78,10 +78,27 @@ public class Shuffler {
         for(int i = 0; i < half; i++){
             everyother[i] = values[i];
         }
-        System.out.println("new array made");
+        System.out.println("array everyother;");
         print(everyother);
+        int r = 0;
         for(int w = (half+1); w < values.length; w++){
-            everyother[w] = values[w];
+            rest[r] = values[w];
+            r+=1;
+        }
+
+        System.out.println("Array Rest:");
+        print(rest);
+        int y = 0;
+        for (int x = 0; x< values.length;){
+            values[x] = everyother[y];
+            x+=2;
+            y+=1;
+        }
+        int u = 0;
+        for (int t = 1; t < values.length;){
+            values[t] = rest[u];
+            t+=2;
+            u+=1;
         }
 
 
@@ -111,6 +128,6 @@ public class Shuffler {
             values.set(k, temp);
 
         }
-    }
+     }
 }
 
