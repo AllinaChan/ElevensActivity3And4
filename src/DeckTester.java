@@ -62,5 +62,7 @@ public class DeckTester {
         System.out.println("toString:\n" + standard.toString());
         standard.shuffle();
         System.out.println("toString:\n" + standard.toString());
+        standard.shuffle();
+        System.out.println("toString:\n" + standard.toString());
     }
 }

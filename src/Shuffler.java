@@ -54,37 +54,24 @@ public class Shuffler {
     public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
-        int half = (int)(values.length/2);
-
-        int [] everyother = new int [half];
-        int[] rest = new int[half];
-
-        for(int i = 0; i < half; i++){
-            everyother[i] = values[i];
+        int k=0;
+        int mid=values.length/2;
+        int[] shuffled=new int[values.length];
+        for(int i=0;i<mid;i++){
+            shuffled[i]=values[k];
+            k+=2;
         }
 
-        int r = 0;
-        for(int w = (half+1); w < values.length; w++){
-            rest[r] = values[w];
-            r+=1;
+        k=1;
+        for(int j=mid;j<values.length;j++){
+            shuffled[j]=values[k];
+            k+=2;
         }
 
-
-        int y = 0;
-        for (int x = 0; x< values.length;){
-            values[x] = everyother[y];
-            x+=2;
-            y+=1;
+        for(int i=0; i < values.length; i++)
+        {
+            values[i]= shuffled[i];
         }
-        int u = 0;
-        for (int t = 1; t < values.length;){
-            values[t] = rest[u];
-            t+=2;
-            u+=1;
-        }
-
-
-
     }
 
     /**
