@@ -16,7 +16,7 @@ public class Shuffler {
      * Tests shuffling methods.
      * @param args is not used.
      */
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Results of " + SHUFFLE_COUNT +
                 " consecutive perfect shuffles:");
         int[] values1 = {0, 1, 2, 3};
@@ -42,23 +42,7 @@ public class Shuffler {
             System.out.println();
         }
         System.out.println();
-    }*/
-    public static void print(int[] arr){
-        for(int i = 0; i < arr.length; i++){
-            System.out.println(arr[i]);
-        }
     }
-
-    public static void main(String[] args){
-        int [] values = {1,2,34,3,45,6,7,8,3,9};
-        System.out.println("Before:");
-        print(values);
-        perfectShuffle(values);
-        System.out.println("After:");
-        print(values);
-    }
-
-
 
     /**
      * Apply a "perfect shuffle" to the argument.
@@ -71,23 +55,21 @@ public class Shuffler {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
         int half = (int)(values.length/2);
-        System.out.println("half"+half);
+
         int [] everyother = new int [half];
         int[] rest = new int[half];
 
         for(int i = 0; i < half; i++){
             everyother[i] = values[i];
         }
-        System.out.println("array everyother;");
-        print(everyother);
+
         int r = 0;
         for(int w = (half+1); w < values.length; w++){
             rest[r] = values[w];
             r+=1;
         }
 
-        System.out.println("Array Rest:");
-        print(rest);
+
         int y = 0;
         for (int x = 0; x< values.length;){
             values[x] = everyother[y];
@@ -129,5 +111,29 @@ public class Shuffler {
 
         }
      }
+    /**
+     * Apply an "efficient selection shuffle" to the argument.
+     * The selection shuffle algorithm conceptually maintains two sequences
+     * of cards: the selected cards (initially empty) and the not-yet-selected
+     * cards (initially the entire deck). It repeatedly does the following until
+     * all cards have been selected: randomly remove a card from those not yet
+     * selected and add it to the selected cards.
+     * An efficient version of this algorithm makes use of arrays to avoid
+     * searching for an as-yet-unselected card.
+     * @param values is an array of integers simulating cards to be shuffled.
+     */
+    public static void selectionShuffle(int[] values) {
+        /* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+
+        for(int k = values.length-1; k > 0; k--)
+        {
+            int r = (int)(Math.random()*k);
+
+            int temp = values[r];
+            values[r] = values[k];
+            values[k]= temp;
+
+        }
+    }
 }
 
