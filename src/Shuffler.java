@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -97,7 +99,7 @@ public class Shuffler {
      * searching for an as-yet-unselected card.
      * @param values is an array of integers simulating cards to be shuffled.
      */
-    public static void selectionShuffle(ArrayList<Card> values) {
+    public static void selectionShuffle(List<Card> values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 
         for(int k = values.size()-1; k > 0; k--)
